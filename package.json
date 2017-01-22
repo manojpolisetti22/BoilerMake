@@ -1,0 +1,27 @@
+{
+  "name": "boilermake",
+  "version": "1.0.0",
+  "description": "finds near publication dates for certain authors",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manojpolisetti22/BoilerMake.git"
+  },
+  "keywords": [
+    "publications"
+  ],
+  "author": "Nicole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manojpolisetti22/BoilerMake/issues"
+  },
+  "homepage": "https://github.com/manojpolisetti22/BoilerMake#readme"
+}

@@ -1,0 +1,69 @@
+
+#head1 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 60px;
+    color: lightpink;
+    font-family: fantasy;
+    
+}
+
+#button1 {
+    margin: 0 auto; 
+    height: 1000px;
+    width: 1000px;
+    
+}
+
+
+button {
+    margin: 0px auto; 
+    display: block;
+    background-color: lightskyblue;
+    font-size: 25px;
+    width: 200px;
+    height: 100px;
+    color: white;
+    transition: .5s ease;
+    text-align: center;
+    position: relative;
+    top: 20%;
+    
+}
+
+p {
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    color: dodgerblue;
+    
+}
+
+body {
+
+    background-color: floralwhite;
+    
+}
+
+div {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+#createaccount {
+    margin: 0 auto;
+    text-align: center;
+    font: 10px;
+}
+
+
+
+.main header {
+    height: 100vh;
+    
+    background-image: url(/desk.jpg);
+    background-image: center center; 
+    background-size: cover;
+}

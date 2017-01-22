@@ -8,13 +8,25 @@ const PORT=8080;
 
 
 app.get('/', function(req, res) {
-	res.sendFile(path.join(__dirname + '/template.html'));
+	res.sendFile(path.join(__dirname + '/homepagek.html'));
 });
 
 app.listen(8080);
 
-
 /*
+var spawn = require('child_process').spawn,
+	py = spawn('python', ['index.py']),
+	author = "Rick Riordan",
+	books;
+
+
+py.stdout.on('author', function(data){
+	books ;
+}
+py.stdout.on('end', function(){
+	console.log	
+
+
 function handleRequest(request, response){
 	response.end('It works!! Path Hit: ' + request.url);
 }

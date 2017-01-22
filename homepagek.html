@@ -12,19 +12,33 @@
             <h1>
             Books
             </h1>
-            <img src="bookwebsitebanner.jpg">
+            <img id= "headpic" src="bookwebsitebanner.jpg">
         </header>
         
         <div id="search">
-            <form action="/html/tags/html_form_tag_action.cfm" method="get">
         
-                Search for authors:
-                <input type="text" name="Username" value="" maxlength ="120" />
-                 <br/>
-            </form>    
+            Author Name: <input type="text" id="aN" name="nameOfAuth">
+        
+            <input type="button" value="search" onclick="nameOfAuthor()">
+             <input type="button" value="add author" onclick="addAuthor()">
+            <input type="button" value="logout" onclick="logout()">
+
+        <script>
+        function addAuthor() {
+            var nam = document.getElementById("aN").value;
+            alert(nam);
+        }
+            
+        function logout(){
+            
+        }
+    
+        function nameOfAuthor() {
+            
+        }
+            
+        function 
+        </script>
         </div>
-        
-        
-     
     </body>
 </html>

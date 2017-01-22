@@ -1,20 +1,44 @@
 
-#head1 {
+
+h1 {
+    
     margin: 0 auto;
     text-align: center;
     font-size: 60px;
     color: lightpink;
-    font-family: fantasy;
+    font-family: fantasy
     
 }
 
-#button1 {
-    margin: 0 auto; 
-    height: 1000px;
-    width: 1000px;
-    
+
+
+
+
+.image-header {
+    align-content: center;
+    width: 80%;
 }
 
+.container {
+    
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: blueviolet;
+}
+
+.btn-lg {
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    color: dodgerblue;
+}
+
+
+
+body {
+     background-color: floralwhite;
+}
 
 button {
     margin: 0px auto; 
@@ -28,115 +52,32 @@ button {
     text-align: center;
     position: relative;
     top: 20%;
-    cursor: pointer;
+     cursor: pointer;
     
 }
 
-p {
+.form-signin {
     margin: auto;
     text-align: center;
-    font-size: 25px;
-    color: dodgerblue;
     
 }
 
-body {
-
-    background-color: floralwhite;
-    
-}
-
-div {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 40px;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    width: auto;
-    margin: auto;
-    display: block;
-}
-    
-}
-
-#createaccount {
-    margin: 0 auto;
-    text-align: center;
-    font: 10px;
-}
-
-
-
-.main-header {
-    text-align: center;
-}
-
-.main header {
-    height: 100vh;
-    background-image: url(/bookwebsitebanner.jpg);
-    background-image: center center;
-    background-image: cover;
-    align-content: center;
-}
-
-
-
-h1 {
-    margin: auto 0px;
-    text-align: center;
-    font-size: 60px;
-    color: lightpink;
-    font-family: fantasy;
-}
-
-img {
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    width: auto;
-    margin: auto;
-    display: block;
-}
-
-
-input {
-    text-align: center;
-    margin: 0 auto;
-    font-size: 15px;
-}
-
-#loginInput {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 25px;
-    color: lightsalmon;
-}
-
-.container {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 25px;
-    color: lightsalmon;
-}
-
-a {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 25px;
-    color: lightslategray;
-}
-
-#header image {
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    width: auto;
+.form-control {
     margin: auto;
-    display: block;
+    text-align: center;
 }
 
-.header-image {
-    align-content: center;
-    width: 80%;
+.form-signin-heading {
+ margin: auto;
+text-align: center;
+color: aqua;
 }
+
+#my style {
+    margin: auto;
+    text-align: center;
+    color: aqua;
+    
+}
+
+

@@ -1,7 +1,13 @@
 var http = require('http');
 var express = require('express');
-var app = express();
 var path = require('path');
+
+// experiment
+var routes = require('./routes');
+var suer = require('./routes/user');
+app.get('/', routes.index);
+app.get('/users', user.list);
+
 
 
 const PORT=8080;
@@ -13,20 +19,20 @@ app.get('/', function(req, res) {
 
 app.listen(8080);
 
+app.post('/', function(req, rest) {
+
+	var spawn = require('child_process').spawn;
+
+	var process = spawn('python',["index.py", placeHolderForStringToPass]);
+
+	py.stdout.on('data', function(data){
+		console.log(data);
+		res.send(data);
+	}
+};
+	
+
 /*
-var spawn = require('child_process').spawn,
-	py = spawn('python', ['index.py']),
-	author = "Rick Riordan",
-	books;
-
-
-py.stdout.on('author', function(data){
-	books ;
-}
-py.stdout.on('end', function(){
-	console.log	
-
-
 function handleRequest(request, response){
 	response.end('It works!! Path Hit: ' + request.url);
 }

@@ -46,7 +46,7 @@
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-	<button onclick="Create()" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+	<button onclick="Create()" class="btn btn-lg btn-primary btn-block" type="submit">Create new account</button>
         
 	<div class="checkbox">
           <label>
@@ -58,11 +58,7 @@
 
     </div> <!-- /container -->
 
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-<<<<<<< HEAD
 <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -98,7 +94,16 @@
   	  // ...
       	});
     }
+    firebase.auth().onAuthStateChanged(function(user) {
+  	if (user) {
+    	  // var email = $("#inputEmail").val(); 
+	  // firebase.database().ref('users/' + user.uid).set({
+	     // email:email
+	  // });
+  	} else {
+    	  // No user is signed in.
+  	}
+    });
 
  </script>
  </html>
->>>>>>> 30ff193c0a2f56a482ddbc34e4dd01b834ed3d88

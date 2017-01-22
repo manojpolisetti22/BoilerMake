@@ -16,14 +16,22 @@
         </header>
         
         <div id="search">
-            <form action="/html/tags/html_form_tag_action.cfm" method="get">
-        
-                Search for authors:
-                <input type="text" name="Username" value="" maxlength ="120" />
-                 <br/>
-            </form>    
+            <form id="form" onsubmit="return false;">
+            <input   style=position:absolute;top:80%;left:5%;width:40%; type="text" id="userInput">
+            
+            Search for Authors
+            
+            <input   style=position:absolute;top:50%;left:5%;width:40%; type="submit"    onclick="name()">
+        </form>   
         </div>
         
+        
+        
+        function strname()
+        {
+            var input = document.getElementById("userInput");
+            alert(input);
+        }
         
      
     </body>

@@ -8,7 +8,18 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>book</title>
+      <body id="my style">
+    <div class="main-header">
+        <h1>
+            Books
+        </h1>
+        <img class="header-img" src="desk.jpg"  >
+            
+        
+    </div>
+
+    </body>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +29,9 @@
 
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
+      
+<link rel="stylesheet" href="bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,15 +43,6 @@
   <body>
 
     <div class="container">
-         <div class="main-header">
-        <h1>
-            Books
-        </h1>
-        <img src="desk.jpg"  >
-        
-            
-        
-    </div>
 
 
       <form class="form-signin">
@@ -46,62 +51,45 @@
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-	<button onclick="Create()" class="btn btn-lg btn-primary btn-block" type="submit">Create new account</button>
+	<button onclick="Create()" class="btn btn-lg btn-primary btn-block" type="button">New User</button>
         
 	<div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button onclick="Login():" class="btn btn-lg btn-primary btn-block" type="submit">Sign in
-        </button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
     </div> <!-- /container -->
 
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
-<script>
+
+  pt src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js">
+   
+  <script>
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBDPKX-FPt4xH3h3cFLYDAUEKxKDJ2z7K4",
-    authDomain: "get-me-my-books.firebaseapp.com",
-    databaseURL: "https://get-me-my-books.firebaseio.com",
-    storageBucket: "get-me-my-books.appspot.com",
-    messagingSenderId: "782131997884"
-  };
+    var config = {
+      apiKey: "AIzaSyBDPKX-FPt4xH3h3cFLYDAUEKxKDJ2z7K4",
+      authDomain: "get-me-my-books.firebaseapp.com",
+      databaseURL: "https://get-me-my-books.firebaseio.com",
+      storageBucket: "get-me-my-books.appspot.com",
+      messagingSenderId: "782131997884"
+    };
     firebase.initializeApp(config);
     function Create(){
     	  var email = $("#inputEmail").val();
-	      var password = $("#inputPassword").val();
+	  var password = $("#inputPassword").val();
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  	      // Handle Errors here.
-  	      var errorCode = error.code;
-  	      var errorMessage = error.message;
-  	      // ...
+  	  // Handle Errors here.
+  	  var errorCode = error.code;
+  	  var errorMessage = error.message;
+  	  // ...
       	});
     }
-    function Login(){
-        var email = $("#inputEmail").val()
-        var password = $("inputPassword").val();
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-        });
-        
-    }
-    firebase.auth().onAuthStateChanged(function(user) {
-  	if (user) {
-    	  // var email = $("#inputEmail").val(); 
-	  // firebase.database().ref('users/' + user.uid).set({
-	     // email:email
-	  // });
-  	} else {
-    	  // No user is signed in.
-  	}
-    });
 
  </script>
- </html>
+ </html>        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>

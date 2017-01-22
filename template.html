@@ -53,7 +53,8 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button onclick="Login():" class="btn btn-lg btn-primary btn-block" type="submit">Sign in
+        </button>
       </form>
 
     </div> <!-- /container -->
@@ -86,13 +87,24 @@
     firebase.initializeApp(config);
     function Create(){
     	  var email = $("#inputEmail").val();
-	  var password = $("#inputPassword").val();
+	      var password = $("#inputPassword").val();
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  	  // Handle Errors here.
-  	  var errorCode = error.code;
-  	  var errorMessage = error.message;
-  	  // ...
+  	      // Handle Errors here.
+  	      var errorCode = error.code;
+  	      var errorMessage = error.message;
+  	      // ...
       	});
+    }
+    function Login(){
+        var email = $("#inputEmail").val()
+        var password = $("inputPassword").val();
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
+        
     }
     firebase.auth().onAuthStateChanged(function(user) {
   	if (user) {

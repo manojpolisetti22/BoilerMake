@@ -19,10 +19,6 @@
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -50,7 +46,9 @@
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
+	<button onclick="Create()" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+        
+	<div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
@@ -64,6 +62,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
+<<<<<<< HEAD
 <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -77,3 +76,29 @@
   firebase.initializeApp(config);
 </script>
 </html>
+=======
+  pt src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBDPKX-FPt4xH3h3cFLYDAUEKxKDJ2z7K4",
+      authDomain: "get-me-my-books.firebaseapp.com",
+      databaseURL: "https://get-me-my-books.firebaseio.com",
+      storageBucket: "get-me-my-books.appspot.com",
+      messagingSenderId: "782131997884"
+    };
+    firebase.initializeApp(config);
+    function Create(){
+    	  var email = $("#inputEmail").val();
+	  var password = $("#inputPassword").val();
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  	  // Handle Errors here.
+  	  var errorCode = error.code;
+  	  var errorMessage = error.message;
+  	  // ...
+      	});
+    }
+
+ </script>
+ </html>
+>>>>>>> 30ff193c0a2f56a482ddbc34e4dd01b834ed3d88

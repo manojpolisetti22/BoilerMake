@@ -4,36 +4,33 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Books</title>
-        <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
     </head>
   
     <body>
         
-     <header class="main-header">
-        <h1>
-            Books
-        </h1>
-        <img src="desk.jpg"  >
-        
-            
-        
-    </header>
+        <header class="main-header">
+            <h1>Books</h1>
 
+            <img class="header-image" src="desk.jpg">
+    
     
 
-        <div id="section-content">
-            <p id="intro">
+            <div id="section-content">
+                <p id="intro">
              There exist various websites readers have to keep manually checking to see when their favorite author is releasing a new book. Our goal through our website, Books, is to  allows user to subscribe to their favorite authors and be notified when their author publishes a new book. This way readers will be able to know if advance when to preorder the new book. 
-            </p><br />
-        </div>
-        
+                </p><br />
+            </div>
+        </header>
+        <form class="modal-content animate" action="action_page.php">
+        <div class="container">
         <div id="loginInput">
              <form action="/html/tags/html_form_tag_action.cfm" method="get">
         
-            Username:
-            <input type="text" name="Username" value="" maxlength ="120" />
+            Email:    
+            <input type="text" name="Email" value="" maxlength ="120" />
             <br/>
             Password:
             <input type="text" name="Password" value="" maxlength ="120" />
@@ -41,6 +38,24 @@
         
         </div>
         
+        <button type="submit">
+            <a href="homepagek.html">
+                Login
+            </a>
+        </button>
+        
+        <input type="checkbox" checked="checked">
+        Remember Me
+        
+            </div>
+        
+            <div class="container" style="background-color:#F1F1F1">
+            
+                <button type="button"     onclick="document.getElementById('id01').style.displ    ay='none'" class="cancelbtn">Cancel</button>
+            
+                <span class="forget"><a href="#">Forgot Password?    </a></span>
+            </div>
+        </form>
         <div id="createaccount">
             <a href="login.html">
             Create New Account
@@ -49,16 +64,7 @@
         </div>
         
         
-         
-        
-        <div id = "button1">
-            
-            <button type="button">
-                Login 
-            </button>
-            
-        </div >
-        
+
         
     </body>
 </html>

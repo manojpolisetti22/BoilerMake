@@ -1,14 +1,10 @@
 var http = require('http');
 var express = require('express');
 var path = require('path');
-
-// experiment
-var routes = require('./routes');
-var suer = require('./routes/user');
-app.get('/', routes.index);
-app.get('/users', user.list);
-
-
+var app = express();
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const PORT=8080;
 
@@ -17,8 +13,16 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/homepagek.html'));
 });
 
-app.listen(8080);
+app.listen(8080, function(){
+	console.log("Started on PORT 8080");
+});
 
+app.post('/author',function(req,res){
+	var author=req.body.auth;
+	console.log("Author name = "+author);
+	res.end("yes");
+}); 
+/*
 app.post('/', function(req, rest) {
 
 	var spawn = require('child_process').spawn;
@@ -29,10 +33,10 @@ app.post('/', function(req, rest) {
 		console.log(data);
 		res.send(data);
 	}
-};
+});
 	
 
-/*
+
 function handleRequest(request, response){
 	response.end('It works!! Path Hit: ' + request.url);
 }

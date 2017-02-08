@@ -12,43 +12,43 @@
             <h1>
             Books
             </h1>
-            <img id= "headpic" src="bookwebsitebanner.jpg">
+            <img id= "headpic" src="bookwebsitebanner.jpg"/>
         </header>
         
         <div id="search">
         
-            Author Name: <input type="text" id="aN" name="nameOfAuth">
+            Author Name: <input type="text" id="aN" name="nameOfAuth"/>
         
-            <input type="button" value="search" onclick="nameOfAuthor()">
-             <input type="button" value="add author" onclick="addAuthor()">
-            <input type="button" value="logout" onclick="logout()">
+            <input type="button" value="search" onclick="nameOfAuthor()"/>
+             <input type="button" value="add author" id = "auth_add" onclick="addAuthor()"/>
+            <input type="button" value="logout" onclick="logout()"/1>
 
-        <script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+	<script>
+	$(document).ready(function(){
+		var auth;
+		$("#auth_add").click(function(){
+			auth=$("#aN").val();
+			$.post("http://localhost:8080/author",{auth:auth}, function(data){
+				if(data==='done')
+				{
+					alert("author success");
+				}
+			});
+		});
+	});
+	</script>
+
+	<!
         function addAuthor() {
             var nam = document.getElementById("aN").value;
-            alert(nam);
+            //alert(nam);
+	    document.getElementById("aN").value = "maybe something will work";
         }
-            
-        function logout(){
-            
-        }
-    
-        function nameOfAuthor() {
-            
-        }
-            
-        function 
+	>
         </script>
         </div>
         
         
-        
-        function strname()
-        {
-            var input = document.getElementById("userInput");
-            alert(input);
-        }
-        
-     
     </body>
 </html>

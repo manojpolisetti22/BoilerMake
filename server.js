@@ -21,7 +21,19 @@ app.post('/author',function(req,res){
 	var author=req.body.auth;
 	console.log("Author name = "+author);
 	res.end("yes");
-}); 
+});
+
+app.post('/search', function(req,res){
+	console.log("At least I'm getting to the server");
+	var author=req.body.auth;
+	var spawn = require("child_process").spawn;
+	var process = spawn('python',["index.py", author]);
+	process.stdout.on('data', function (data) {
+		console.log("Got something back from python "+data);
+	});
+	console.log("Author name = "+author);
+	res.end("yes");
+});
 /*
 app.post('/', function(req, rest) {
 

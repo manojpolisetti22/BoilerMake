@@ -3,6 +3,9 @@ from lxml import html
 import requests
 from bs4 import BeautifulSoup
 import re
+import sys
+
+getBooks(sys.argv[1])
 
 def getBooks(s):
 	
@@ -32,6 +35,7 @@ def getBooks(s):
 				empty.append(str.text)
 
 	print(empty)
+        sys.stdout.flush()
 
 
 #getBooks(input('Enter Author: '))

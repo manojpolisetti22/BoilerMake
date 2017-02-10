@@ -5,37 +5,40 @@ from bs4 import BeautifulSoup
 import re
 import sys
 
-getBooks(sys.argv[1])
+#getBooks(sys.argv[1])
 
 def getBooks(s):
-	
-	firstName,lastName = s.split(" ")
-	page = requests.get('https://en.wikipedia.org/wiki/'+firstName+'_'+lastName)
-	url = page.text
+        
+        firstName,lastName = s.split(" ")
+        page = requests.get('https://en.wikipedia.org/wiki/'+firstName+'_'+lastName)
+        url = page.text
 
-	soup = BeautifulSoup(url, 'lxml')
+        soup = BeautifulSoup(url, 'lxml')
 
-	biblio = soup.find('span', {'id':'Bibliography'})
-	h2 = biblio.parent
-	h3 = h2.findNextSiblings('ol')
-	h3.extend(h2.findNextSiblings('ul'))
+        biblio = soup.find('span', {'id':'Bibliography'})
+        h2 = biblio.parent
+        h3 = h2.findNextSiblings('ol')
+        h3.extend(h2.findNextSiblings('ul'))
 
 
-	empty = []
-	
-	for li in h3:
-		obj = list(li.find_all('li'))
-		for str in obj:
-			if "2017" in str.text:
-				empty.append(str.text)
-			elif "2018" in str.text:
-				empty.append(str.txt)
-				#print (str.text)
-			elif "2019" in str.text:
-				empty.append(str.text)
+        empty = []
+        
+        for li in h3:
+                obj = list(li.find_all('li'))
+                for str in obj:
+                        if "2017" in str.text:
+                                empty.append(str.text)
+                        elif "2018" in str.text:
+                                empty.append(str.txt)
+                                #print (str.text)
+                        elif "2019" in str.text:
+                                empty.append(str.text)
 
-	print(empty)
+        print(empty)
         sys.stdout.flush()
+
+getBooks(sys.argv[1])
+
 
 
 #getBooks(input('Enter Author: '))

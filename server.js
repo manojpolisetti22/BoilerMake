@@ -5,6 +5,9 @@ var app = express();
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+//app.use(express.logger('dev'));
+//app.use(express.bodyParser());
+//app.use(app.router);
 
 const PORT=8080;
 
@@ -19,8 +22,27 @@ app.listen(8080, function(){
 
 app.post('/author',function(req,res){
 	var author=req.body.auth;
+	var python = require('child_process').spawn('py', ["index.py", author]);
+	var output = "";
+	python.stdout.on('data', function(data){ output += data});
+	python.on('close' ,function(code){
+		if (code !== 0) {
+			console.log("Returning 500");
+			return res.status(500, code);
+		}
+		console.log("Returning 200");
+		return res.status(200, output);
+	});
+	/*
+	var spawn = require('child_process').spawn;
+	var process = spawn('py',["index.py", author]);
+	process.stdout.on('data', function (data) {
+		console.log("Why doesn't this work?");
+		console.log("Got something back from python "+data);
+	});
 	console.log("Author name = "+author);
-	res.end("yes");
+        res.end("yes");
+        */
 });
 
 app.post('/search', function(req,res){
